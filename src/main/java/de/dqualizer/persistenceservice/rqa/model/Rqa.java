@@ -1,8 +1,7 @@
 
 package de.dqualizer.persistenceservice.rqa.model;
 
-import java.io.Serializable;
-import javax.annotation.processing.*;
+import javax.annotation.Generated;
 import javax.validation.Valid;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -28,8 +27,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "runtime_quality_analysis"
 })
 @Generated("jsonschema2pojo")
-public class Rqa implements Serializable
-{
+public class Rqa {
 
     /**
      * A unique identifier for the rqa definition
@@ -37,7 +35,7 @@ public class Rqa implements Serializable
      */
     @JsonProperty("id")
     @JsonPropertyDescription("A unique identifier for the rqa definition")
-    private Integer id;
+    private String id;
     /**
      * Every Rqa-Definition has a unique name
      * 
@@ -82,7 +80,6 @@ public class Rqa implements Serializable
     @Valid
     @NotNull
     private RuntimeQualityAnalysis runtimeQualityAnalysis;
-    private final static long serialVersionUID = 392649148317245081L;
 
     /**
      * No args constructor for use in serialization
@@ -100,7 +97,7 @@ public class Rqa implements Serializable
      * @param id
      * @param version
      */
-    public Rqa(Integer id, String name, Integer version, String context, String environment, RuntimeQualityAnalysis runtimeQualityAnalysis) {
+    public Rqa(String id, String name, Integer version, String context, String environment, RuntimeQualityAnalysis runtimeQualityAnalysis) {
         super();
         this.id = id;
         this.name = name;
@@ -115,7 +112,7 @@ public class Rqa implements Serializable
      * 
      */
     @JsonProperty("id")
-    public Integer getId() {
+    public String getId() {
         return id;
     }
 
@@ -124,13 +121,8 @@ public class Rqa implements Serializable
      * 
      */
     @JsonProperty("id")
-    public void setId(Integer id) {
+    public void setId(String id) {
         this.id = id;
-    }
-
-    public Rqa withId(Integer id) {
-        this.id = id;
-        return this;
     }
 
     /**
@@ -149,11 +141,6 @@ public class Rqa implements Serializable
     @JsonProperty("name")
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Rqa withName(String name) {
-        this.name = name;
-        return this;
     }
 
     /**
@@ -176,11 +163,6 @@ public class Rqa implements Serializable
         this.version = version;
     }
 
-    public Rqa withVersion(Integer version) {
-        this.version = version;
-        return this;
-    }
-
     /**
      * The name of the Bounded Context to which this modeling belongs
      * (Required)
@@ -199,11 +181,6 @@ public class Rqa implements Serializable
     @JsonProperty("context")
     public void setContext(String context) {
         this.context = context;
-    }
-
-    public Rqa withContext(String context) {
-        this.context = context;
-        return this;
     }
 
     /**
@@ -226,11 +203,6 @@ public class Rqa implements Serializable
         this.environment = environment;
     }
 
-    public Rqa withEnvironment(String environment) {
-        this.environment = environment;
-        return this;
-    }
-
     /**
      * 
      * (Required)
@@ -249,11 +221,6 @@ public class Rqa implements Serializable
     @JsonProperty("runtime_quality_analysis")
     public void setRuntimeQualityAnalysis(RuntimeQualityAnalysis runtimeQualityAnalysis) {
         this.runtimeQualityAnalysis = runtimeQualityAnalysis;
-    }
-
-    public Rqa withRuntimeQualityAnalysis(RuntimeQualityAnalysis runtimeQualityAnalysis) {
-        this.runtimeQualityAnalysis = runtimeQualityAnalysis;
-        return this;
     }
 
 }
